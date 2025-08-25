@@ -5,8 +5,115 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu Portifólio</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    
+ 
+    <header>
+        <h1>Meu Portfólio</h1>
+        <nav>
+            <ul>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#contatos">Contatos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- seção sobre-->
+     <section id="sobre" class="section">
+        <h2>Sobre Mim</h2>
+        <img src="./images/dea42932-d3bf-42b1-a801-944160c2458d.jpg" alt="Foto de Perfil" class="perfil">
+        <p>
+            Olá! Meu nome é Igor Porto, sou estudante do Curso Técnico de Desenvolvimento de Sistemas na 
+            escola Monsenhor Sarrion e este é meu portfólio. Aqui vc encontra alguns projetos que desenvolvi durante 
+            o curso.
+        </p>
+     </section>
+
+      <!-- seção projetos-->
+       <section id="projetos" class="section">
+        <h2>Meus Projetos</h2>
+        <div class="projetos-container">
+            <div class="card">
+                <img src="https://picsum.photos/300/200?random=1" alt="projeto 1" loading="lazy">
+                <h3>Projeto 1</h3>
+                <p>descrição do Projeto 1.</p>
+            </div>
+
+            <div class="card">
+                <img src="https://picsum.photos/300/200?random=2" alt="projeto 2" loading="lazy">
+                <h3>Projeto 2</h3>
+                <p>descrição do Projeto 2.</p>
+            </div>
+
+            <div class="card">
+                <img src="https://picsum.photos/300/200?random=3" alt="projeto 3" loading="lazy">
+                <h3>Projeto 3</h3>
+                <p>descrição do Projeto 3.</p>
+            </div>
+
+        </div>
+       </section>
+
+       <!-- seção contato-->
+
+       <section id="contatos" class="section">
+        <h2>Contatos</h2>
+        <p class="subtitle">Estou disponivel para oportunidades e colaboração</p>
+
+        <div class="contact-grid">
+            <div class="contact-card">
+                <i class="fas fa-envelope"></i>
+                <div>
+                    <h3>E-mail</h3>
+                    <a href="mailto:igorporto2007@gmail.com">igorporto2007@gmail.com</a>
+                </div>
+            </div>
+
+            <div class="contact-card">
+                <i class="fas fa-phone"></i>
+                <div>
+                    <h3>Celular</h3>
+                    <span>(18) 99751-9355</span>
+                </div>
+            </div>
+
+            <div class="social-box">
+                <h3>Redes Sociais</h3>
+                <div class="social-links">
+                    <a href="https://github.com/0CLIN" class="btn github" class="btn github" target="_blank">
+                        <i class="fab fa-github"></i>
+                        GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+     </section>
+
+     <footer>
+        <p> &copy; 2025 - Portfólio Igor Porto</p>
+     </footer>
+
+     <script>
+        // Função para fade-in ao scroll
+        const sections = document.querySelectorAll('.section');
+        const options = {
+          threshold: 0.1
+        };
+     
+        const observer = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('show');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, options);
+     
+        sections.forEach(section => {
+          observer.observe(section);
+        });
+      </script>
 </body>
 </html>
